@@ -1,0 +1,55 @@
+===To eliminate console warnings:===
+add this to the config/environment.js file:
+
+contentSecurityPolicy: {
+  'default-src': "'none'",
+  'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+  'font-src': "'self'",
+  'connect-src': "'self'",
+  'img-src': "'self'",
+  'style-src': "'self' 'unsafe-inline'",
+  'frame-src': "'none'"
+}
+
+===To use Bootstrap with Ember CLI:===
+bower install --save bootstrap
+
+Brocfile.js
+app.import('vendor/bootstrap/dist/js/bootstrap.js');
+app.import('vendor/bootstrap/dist/css/bootstrap.css');
+app.import('bower_components/bootstrap/dist/css/bootstrap.css.map');
+
+cycle server - changes to brocfile are not picked up by Livereload
+
+===To use FIXTURES===
+create app/adapters/application.js
+add this to the file:
+
+import DS from 'ember-data';
+
+export default DS.FixtureAdapter.extend();
+
+
+
+===Outstanding Deprectation Warnings to Ignore===
+
+DEPRECATION: `lookupFactory` was called on a Registry. The `initializer` API no longer receives a container, and you should use an `instanceInitializer` to look up objects from the container. See http://emberjs.com/guides/deprecations#toc_deprecate-access-to-instances-in-initializers for more details.
+        at Object.Registry.lookupFactory (http://localhost:4200/assets/vendor.js:12183:26)
+        at ember$data$lib$initializers$store$$initializeStore (http://localhost:4200/assets/vendor.js:70659:48)
+        at Object.ember$data$lib$setup$container$$setupContainer [as initialize] (http://localhost:4200/assets/vendor.js:70969:7)
+        at http://localhost:4200/assets/vendor.js:14662:23
+        at http://localhost:4200/assets/vendor.js:14685:9
+        at visit (http://localhost:4200/assets/vendor.js:12701:7)
+        at visit (http://localhost:4200/assets/vendor.js:12699:9)
+        at DAG.topsort (http://localhost:4200/assets/vendor.js:12813:11)
+        at Namespace.default.extend._runInitializer (http://localhost:4200/assets/vendor.js:14684:13)
+DEPRECATION: `lookup` was called on a Registry. The `initializer` API no longer receives a container, and you should use an `instanceInitializer` to look up objects from the container. See http://emberjs.com/guides/deprecations#toc_deprecate-access-to-instances-in-initializers for more details.
+        at Object.Registry.lookup (http://localhost:4200/assets/vendor.js:12173:26)
+        at ember$data$lib$initializers$store$$initializeStore (http://localhost:4200/assets/vendor.js:70677:28)
+        at Object.ember$data$lib$setup$container$$setupContainer [as initialize] (http://localhost:4200/assets/vendor.js:70969:7)
+        at http://localhost:4200/assets/vendor.js:14662:23
+        at http://localhost:4200/assets/vendor.js:14685:9
+        at visit (http://localhost:4200/assets/vendor.js:12701:7)
+        at visit (http://localhost:4200/assets/vendor.js:12699:9)
+        at DAG.topsort (http://localhost:4200/assets/vendor.js:12813:11)
+        at Namespace.default.extend._runInitializer (http://localhost:4200/assets/vendor.js:14684:13)
