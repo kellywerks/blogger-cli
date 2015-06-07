@@ -3,8 +3,16 @@
   <h1>Dracula's blog from app/templates/posts.hbs</h1>
 
   <ul>
+    <!-- each iterates off the implicit this which is returned from the model function in the route -->
+    <!-- #each is the same as each post in model -->
     {{#each post in model}}
-      <li>{{post.title}}</li>
+    <!-- title also uses the implicit this which refers to the model (same as this.title)-->
+      <li>
+        {{post.title}}
+        <span class="softened">
+          by {{post.user.name}}
+        </span>
+      </li>
     {{/each}}
   </ul>
 
