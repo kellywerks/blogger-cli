@@ -1,7 +1,7 @@
 {
   "name": "blogger-cli",
   "version": "0.0.0",
-  "description": "Small description for blogger-cli goes here",
+  "description": "ember cli blogging app for epicodus lesson on ember cli",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -16,7 +16,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "kelly becker",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
