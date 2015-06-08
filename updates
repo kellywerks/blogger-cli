@@ -30,7 +30,6 @@ import DS from 'ember-data';
 export default DS.FixtureAdapter.extend();
 
 
-
 ===Outstanding Deprectation Warnings to Ignore===
 
 DEPRECATION: `lookupFactory` was called on a Registry. The `initializer` API no longer receives a container, and you should use an `instanceInitializer` to look up objects from the container. See http://emberjs.com/guides/deprecations#toc_deprecate-access-to-instances-in-initializers for more details.

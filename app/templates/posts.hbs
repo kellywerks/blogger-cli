@@ -8,15 +8,18 @@
     {{#each post in model}}
     <!-- title also uses the implicit this which refers to the model (same as this.title)-->
       <li>
-        {{#link-to 'post' post}}
+        {{#link-to 'post' post}}{{post.title}}{{/link-to}}
         <!-- this references the current post that we are iterating through -->
-          {{post.title}}
-        <span class="softened">
+          <!-- {{post.title}} -->
+        <!-- <span class="softened">
           by {{post.user.name}}
-        </span>
-        {{/link-to}}
+        </span> -->
       </li>
     {{/each}}
   </ul>
+
+{{#link-to 'posts.new' classNames="btn btn-primary"}}New scary post{{/link-to}}
+
+{{outlet}}
 
 </div>
